@@ -1,0 +1,30 @@
+<!-- 日历 start -->
+    <view class="calendar-tt">
+        <text bindtap="resetCalendar" class="h1">{{month_en}}</text>
+        <view bindtap="resetCalendar" class="p">
+            <text>{{year}}/{{month}}月</text>
+        </view>
+        <view class="btn-pre" bindtap="getPreMonth">上个月</view>
+        <view class="btn-next" bindtap="getNextMonth">下个月</view>
+    </view>
+    <view class="calendar-box">
+        <view class="calendar-header">
+            <view class="li">日</view>
+            <view class="li">一</view>
+            <view class="li">二</view>
+            <view class="li">三</view>
+            <view class="li">四</view>
+            <view class="li">五</view>
+            <view class="li">六</view>
+        </view>
+        <view class="calendar-item">
+            <block wx:for="{{daysInMonth}}" wx:for-index="index" wx:for-item="day">
+            <block wx:if="{{day.num == 0}}">
+            <li><span></span></li>
+            </block>
+            <block wx:else>
+            <li><span>{{day.num}}</span></li>
+            </block>
+            </block>
+        </view>
+    </view>
